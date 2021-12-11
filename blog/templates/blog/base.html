@@ -7,10 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
 
     {% if title %}
     <title>Django Blog - {{ title }}</title>
@@ -18,79 +22,7 @@
     <title>Django blog</title>
     {% endif %}
 
-    <style>
-        body{
-            margin: 0;
-            font-family: 'Bag Script', cursive;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #000;
-        }
-        h1{
-            margin: 0;padding: 0;
-            color: #111;
-            font-size: 10em;
-        }
-        h1 span{
-            display: table-cell;
-            margin: 0;
-            padding: 0; 
-            animation: mimito 2s linear infinite;
-        }
-        h1 span:nth-child(1){
-            animation-delay: 0s;
-        }
-        h1 span:nth-child(2){
-            animation-delay: 0.25s;
-        }
-        h1 span:nth-child(3){
-            animation-delay: 0.5s;
-        }
-        h1 span:nth-child(4){
-            animation-delay: 0.75s;
-        }
-        h1 span:nth-child(5){
-            animation-delay: 1s;
-        }
-        h1 span:nth-child(6){
-            animation-delay: 1.25s;
-        }
-        h1 span:nth-child(7){
-            animation-delay: 1.5s;
-        }
-              
-        @keyframes mimito {
-            0%,100%{
-                color: yellowgreen;
-                filter: blur(0px);
-                text-shadow: 0 0 10px #00b3ff,
-                             0 0 20px #00b3ff,
-                             0 0 40px #00b3ff,
-                             0 0 80px #00b3ff,
-                             0 0 120px #00b3ff,
-                             0 0 200px #00b3ff,
-                             0 0 300px #00b3ff,
-                             0 0 400px #00b3ff;
-            }
-
-            5%,95%{
-                color: #111;
-                filter: blur(0px);
-            }
-        }
-        /* .soxibjon33{
-            position: absolute;
-            top: 65%;
-            left: 43%;
-            font-size: 100px;
-            background:transparent;
-            font-family:'Bag Script', cursive;
-            opacity: 0;
-        } */
-    </style>
+   
 </head>
 
 <body>
@@ -116,7 +48,8 @@
             </div>
         </nav>
     </header>
-    <main role="main" class="container">
+
+     <main role="main" class="container">
         <div class="row">
             <div class="col-md-8">
                 {% block content %}{% endblock %}
@@ -137,25 +70,7 @@
         </div>
     </main>
 
-    <h1>
-        <span>M</span>
-        <span>i</span>
-        <span>r</span>
-        <span>f</span>
-        <span>a</span>
-        <span>y</span>
-        <span>z</span>
-    </h1>
-    <!-- <button class="soxibjon33">Rang </button> -->
-    <script>   
-      var color = ["#222f3e","#f368e0","#ee5253","#0abde3","#10ac84", "#222f3e","#5f27cd",];
-      var i = 0;
-      document.querySelector("body").addEventListener("click",
-      function(){
-          i = i < color.length ? ++i : 0;
-          document.querySelector("body").style.background = color[i]
-      })
-     </script>
+   
 </body>
 
 </html>
